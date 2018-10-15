@@ -8,7 +8,7 @@ pipeline {
         }
         stage('setting env') {
            steps {
-               VERSION= sh "$(date +%Y_%m_%d).$BUILD_NUMBER"
+               sh "export VERSION= $(date +%Y_%m_%d).$BUILD_NUMBER"
                echo "${VERSION}"
            }
         }
