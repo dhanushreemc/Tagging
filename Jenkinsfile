@@ -11,7 +11,8 @@ pipeline {
         }
         stage('test') {
            steps {
-              echo "VERSION= $(date +%Y_%m_%d).$BUILD_NUMBER"
+              sh "VERSION= $(date +%Y_%m_%d).$BUILD_NUMBER"
+              sh "export ${VERSION}"
            }
         }
         stage('launch') {
