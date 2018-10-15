@@ -11,9 +11,9 @@ pipeline {
         }
         stage('test') {
            steps {
-              sh "VERSION= $(date +%Y_%m_%d).$BUILD_NUMBER"
-              sh "export ${VERSION}"
-           }
+              sh "script.sh"
+              sh "export VERSION"
+          
         }
         stage('launch') {
            steps {
