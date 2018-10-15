@@ -1,17 +1,14 @@
 pipeline {
     agent {label "build"}
-    environment {
-         VERSION= sh '$(date +%Y_%m_%d).$BUILD_NUMBER'
-         
-    }
     stages {
         stage('checkout') {
            steps {
               checkout scm
            }
         }
-        stage('test') {
+        stage('setting env') {
            steps {
+               VERSION= sh "$(date +%Y_%m_%d).$BUILD_NUMBER"
                echo "${VERSION}"
            }
         }
