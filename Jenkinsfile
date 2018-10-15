@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('checkout') {
            steps {
-              echo "${VERSION}"
+              checkout scm
            }
         }
         stage('test') {
