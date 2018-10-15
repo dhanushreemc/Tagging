@@ -1,7 +1,7 @@
 pipeline {
     agent {label "build"}
     environment {
-        def VERSION= sh returnstdout: true, scrip:'$(date +%Y_%m_%d).$BUILD_NUMBER'
+        def VERSION= sh returnstdout: true, scrip:'sh script.sh'
     }
     stages {
         stage('checkout') {
