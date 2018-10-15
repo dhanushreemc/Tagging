@@ -12,7 +12,7 @@ pipeline {
         stage('test') {
            steps {
                sh "${VERSION}"
-          
+           }
         }
         stage('launch') {
            steps {
