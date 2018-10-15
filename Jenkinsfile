@@ -1,7 +1,7 @@
 pipeline {
     agent {label "build"}
     environment {
-        def BUILDTAG= `(date +%Y_%m_%d)`
+        def BUILDTAG= sh '$(date +%Y_%m_%d)'
     stages {
         stage('checkout') {
            steps {
