@@ -1,2 +1,2 @@
 !#/bin/bash
-VERSION=$(date +%Y_%m_%d).$BUILD_NUMBER
+$(date +%Y_%m_%d).$BUILD_NUMBER
