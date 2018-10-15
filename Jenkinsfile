@@ -1,7 +1,7 @@
 pipeline {
     agent {label "build"}
     environment {
-        def VERSION= sh returnStdout: true, script: '$(date +%Y_%m_%d).$BUILD_NUMBER'
+         VERSION= sh '$(date +%Y_%m_%d).$BUILD_NUMBER'
     }
     stages {
         stage('checkout') {
@@ -11,8 +11,7 @@ pipeline {
         }
         stage('test') {
            steps {
-              sh "script.sh"
-              sh "export VERSION"
+               sh "${VERSION}"
           
         }
         stage('launch') {
