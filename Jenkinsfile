@@ -8,13 +8,13 @@ pipeline {
         }
         stage('setting env') {
            steps {
-               sh "export VERSION=`(date +%Y_%m_%d)`"
-               echo "${VERSION}"
+               sh "export BUILDTAG=`(date +%Y_%m_%d)`"
+               echo "${BUILDTAG}"
            }
         }
         stage('launch') {
            steps {
-              echo "${VERSION}"
+              echo "${BUILDTAG}"
            }
         }
     }
